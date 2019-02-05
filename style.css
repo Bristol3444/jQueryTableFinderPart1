@@ -1,0 +1,134 @@
+body {
+    background-color: #E1D7D4;
+    display: flex;
+    flex-direction: column;
+}
+    /* Styling the main sections of title and the form to ensure everything is centered */
+    #title, #info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 30px;
+    }
+    /* styling the floorplan section to ensure everything is centered */
+    #layout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* additional styling on the form including the box-shadow */
+    #info {
+        display: none;
+        background-color: white;
+        border-radius: 5px;
+        height: 50%;
+        box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+    }
+         /* displaying the form once a table is clicked */
+         #info.active {
+            display: flex;
+            position: fixed;
+            top: 25%;
+            left: 10%;
+            width: 80%;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    /* extra styling for the div encasing the form to secure positioning */
+    #case{
+            width: 99%;
+            padding: 10px;
+            padding-left: 25px;
+            height: 40%;
+        }
+    #layout {
+        height: 50vh;
+    }
+    /* flexing the floorplan inside of the main section */
+    #floor-plan {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        background-color: white;
+        border-radius: 5px;
+    }
+    /* styling for both headers, on the main page and on the form */
+    .header, .form-header {
+        font-family: 'Rubik Mono One', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        color: #E34E45;
+        margin: 0 auto;
+    }
+    .form-header {
+        font-size: 1.3em;
+        padding-top: 30px;
+    }
+    .sub-header, .sub {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1em;
+        padding-top: 10px;
+    }
+/*styling inputs on form  */
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 30%;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 1em;
+}
+/* styling the save button */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 25%;
+    background-color: #008000;
+    color: white;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
+    font-size: 1em;
+}
+/* styling the exit button */
+.exit {
+    position: absolute;
+    right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: .4;
+    font-size: 1em;
+}
+/* styling the table position when available */
+.table {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgray;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 100%;
+}
+/* styling for when a table is reserved */
+.reserved {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ADAAAA;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 100%;
+}
+#taken {
+    display: none;
+    position: absolute;
+    width: 20px;
+}

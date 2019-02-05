@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik+Mono+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Table Finder</title>
+</head>
+
+<body>
+    <header id="title">
+        <p class="header">Table Finder</p>
+        <p class="sub">Pick your table now</p>
+    </header>
+    <section id="layout">
+        <div id="floor-plan">
+            <span id="one" class="table">1</span>
+            <span id="two" class="table">2</span>
+            <span id="three" class="table">3</span>
+            <span id="four" class="table">4</span>
+            <span id="five" class="table">5</span>
+            <span id="six" class="table">6</span>
+            <span id="seven" class="table">7</span>
+            <span id="eight" class="table">8</span>
+            <span id="nine" class="table">9</span>
+        </div>
+        <div id="taken">Reserved</div>
+    </section>
+    <form id="info">
+        <div id="case">
+            <p class="exit">X</p>
+            <p class="form-header">New Reservation</p>
+            <p class="sub-header"></p>
+            <input type="text" value="Name" class="input">
+            <input type="text" value="Phone" class="input">
+            <input type="text" value="Number of Guests" class="input">
+            <button type="button" value="Save" class="button">Save</button>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
