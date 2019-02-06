@@ -1,106 +1,48 @@
 "use strict";
 $(document).ready(() => {
-let tableOne = 1; let tableTwo = 2; let tableThree = 3;
-let tableFour = 4; let tableFive = 5; let tableSix = 6;
-let tableSeven = 7; let tableEight = 8; let tableNine = 9;
+    $(document).on("click", ".available", function (e) {
+        $("#info").show();
+        let table = $(e.target);
+        let tableNum = table.text();
+        $(".sub-header").append(`
+        <p> Table Number: ${tableNum}</p>
+        `) // on table click, store the event target and the text of the event target element in two variables. add the target element text to the form
 
-$("#one").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableOne}</p>`);
-    
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#one").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#two").on("click", function(){
-        $("#info").addClass("active");
-        $(".sub-header").append(`<p>Table Number: ${tableTwo}</p>`);
-    
-        $("button").on("click", function(){
-            $("#info").removeClass("active");
-            $("#two").addClass("reserved");
-            $(".sub-header").text("");
+        $(document).on("click", ".button", function (e) {
+            $("#info").hide();
+            $(table).addClass("reserved").removeClass("available");
+            $(".sub-header").empty();
+            // when save is clicked, hide the form, change the table to reserved class and clear out the appended sub-header
+            $(table)
+                .attr("name", $(".name").val())
+                .attr("phone", $(".phone").val())
+                .attr("guests", $(".guests").val());
+                // $("input").each(function () {
+                //     $(this).val("");
+                });
+                // added three attributes to table, or the DOM element that has been clicked. Each attribute is the value of the input (each with it's own class)
+                $(document).on("mouseenter", ".reserved", (event) => {
+                    if ($(event.target).attr("name") && $(event.target).attr("phone") && $(event.target).attr("guests")) {
+                        $(event.target).append(`
+                        <section class="tooltip">
+                        Name: ${$(event.target).attr("name")}
+                        Phone: ${$(event.target).attr("phone")}
+                        Guests: ${$(event.target).attr("guests")}
+                        </section>
+                        `); 
+                        
+                        // if the mouse enters a table with the class of reserved, and has all the inputted fields, append the section tooltip
+                    }
+                $(document).on("mouseleave", ".reserved", (event) => {
+                    $(".tooltip").remove();
+                }) // when the mouse exits, remove the class
+            });
+        console.log(table);
+            $(document).on("click", ".exit", function () {
+                $("#info").hide();
+                $(".sub-header").empty();
+            }); // exit function removes the form and sub-header without doing anything to the tables
+        
         });
-});
-$("#three").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableThree}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#three").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#four").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableFour}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#four").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#five").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableFive}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#five").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#six").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableSix}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#six").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#seven").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableSeven}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#seven").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#eight").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableEight}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#eight").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$("#nine").on("click", function(){
-    $("#info").addClass("active");
-    $(".sub-header").append(`<p>Table Number: ${tableNine}`);
-
-    $("button").on("click", function(){
-        $("#info").removeClass("active");
-        $("#nine").addClass("reserved");
-        $(".sub-header").text("");
-    });
-});
-$(".exit").on("click", function(){
-    $("#info").removeClass("active");
-    $("#nine").removeClass("reserved");
-    $(".sub-header").text("");
-});
-$(".table reserved").on("hover", function(){
-    $("#taken").show();
-    console.log("showing");
-})
-});
+     });
+ // closing ready function

@@ -22,10 +22,16 @@ body {
     /* additional styling on the form including the box-shadow */
     #info {
         display: none;
-        background-color: white;
-        border-radius: 5px;
-        height: 50%;
-        box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+            position: fixed;
+            top: 25%;
+            left: 10%;
+            width: 80%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: white;
+            border-radius: 5px;
+            height: 50%;
+            box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
     }
          /* displaying the form once a table is clicked */
          #info.active {
@@ -49,11 +55,13 @@ body {
     }
     /* flexing the floorplan inside of the main section */
     #floor-plan {
+        position: fixed;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         width: 75%;
+        height: 50vh;
         background-color: white;
         border-radius: 5px;
     }
@@ -75,7 +83,7 @@ body {
         padding-top: 10px;
     }
 /*styling inputs on form  */
-.input {
+.name, .phone, .guests {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -107,7 +115,7 @@ body {
     font-size: 1em;
 }
 /* styling the table position when available */
-.table {
+.available {
     font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-wrap: wrap;
@@ -131,4 +139,9 @@ body {
     display: none;
     position: absolute;
     width: 20px;
+}
+.tooltip {
+    border: 1px solid black;
+    position: absolute;
+    color: black;
 }
