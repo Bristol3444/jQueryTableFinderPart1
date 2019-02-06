@@ -32,9 +32,9 @@ $(document).ready(() => {
         if ($(event.target).attr("name") && $(event.target).attr("phone") && $(event.target).attr("guests")) {
             $(event.target).append(`
                         <section class="tooltip">
-                        Name: ${$(event.target).attr("name")}
-                        Phone: ${$(event.target).attr("phone")}
-                        Guests: ${$(event.target).attr("guests")}
+                        <p> Name: ${$(event.target).attr("name")}</p>
+                        <p> Phone: ${$(event.target).attr("phone")}</p>
+                        <p> Guests: ${$(event.target).attr("guests")}</p>
                         </section>
                         `);
 
